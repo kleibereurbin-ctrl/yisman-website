@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YISMAN Intimates 绿色环保 - OEKO-TEX认证，环保染料，水循环系统，可持续包装，践行绿色制造">
+  <title>绿色环保 | YISMAN Intimates 依诗曼服装</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏮</text></svg>">
+  <style>
+    .factory-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, var(--cream), var(--white));
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .factory-hero h1 { font-size: 40px; margin-bottom: 16px; }
+    .factory-hero .subtitle { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+    .factory-hero .highlights { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .factory-hero .highlight { background: var(--rose-light); color: var(--rose); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .factory-hero-img {
+      width: 100%; min-height: 380px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: linear-gradient(135deg, #e8f5e9, var(--cream));
+    }
+
+    .fac-section { padding: 80px 20px; }
+    .fac-section:nth-child(even) { background: var(--cream); }
+    .fac-container { max-width: 1200px; margin: 0 auto; }
+    .fac-section-title { font-size: 32px; margin-bottom: 12px; text-align: center; }
+    .fac-section-subtitle { text-align: center; color: var(--text-light); font-size: 15px; max-width: 600px; margin: 0 auto 50px; }
+
+    .fac-desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .fac-desc-text p { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
+
+    .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 900px; margin: 0 auto; }
+    .cert-card { background: white; padding: 40px 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .cert-card .cert-icon-big { width: 80px; height: 80px; margin: 0 auto 20px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; }
+    .cert-card h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .cert-card p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+
+    .practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .practice-card { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); display: flex; gap: 20px; align-items: flex-start; }
+    .practice-icon { width: 56px; height: 56px; min-width: 56px; background: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .practice-content h4 { font-family: 'Inter', sans-serif; font-size: 15px; margin-bottom: 8px; }
+    .practice-content p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+
+    .fac-features-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .fac-feature-link { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; transition: var(--transition); text-decoration: none; color: inherit; }
+    .fac-feature-link:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .fac-feature-link .icon { font-size: 36px; margin-bottom: 12px; }
+    .fac-feature-link h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .fac-feature-link p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+    .cta-block { text-align: center; }
+    .cta-block h2 { margin-bottom: 12px; }
+    .cta-block p { color: var(--text-light); margin-bottom: 30px; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 800px; margin: 0 auto 40px; }
+    .stat-box { background: white; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .stat-box .num { font-size: 32px; font-weight: 700; color: #2e7d32; font-family: 'Playfair Display', serif; }
+    .stat-box .label { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+    .material-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 600px; margin: 0 auto; }
+    .material-tag { background: #e8f5e9; color: #2e7d32; padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 500; }
+
+    @media (max-width: 1024px) {
+      .factory-hero { grid-template-columns: 1fr; text-align: center; }
+      .factory-hero .highlights { justify-content: center; }
+      .fac-desc-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .practice-grid { grid-template-columns: 1fr; }
+      .fac-features-links { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .certs-grid { grid-template-columns: 1fr; }
+      .practice-grid { grid-template-columns: 1fr; }
+      .fac-features-links { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .practice-card { flex-direction: column; text-align: center; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle" role="group" aria-label="Language switch">
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="factory.html" class="active">工厂实力</a>
+        <a href="contact.html">联系我们</a>
+        <a href="contact.html" class="nav-cta">获取报价</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="factory-hero">
+    <div>
+      <h1 data-i18n="eco_hero_title">绿色环保</h1>
+      <p class="subtitle" data-i18n="eco_hero_desc">
+        YISMAN始终将可持续发展作为企业核心价值之一。我们通过OEKO-TEX® Standard 100认证，使用环保面料和染料，建立水循环处理系统，推行绿色包装方案。在保障产品质量的同时，最大程度降低对环境的影响。
+      </p>
+      <div class="highlights">
+        <span class="highlight">🌿 OEKO-TEX® 认证</span>
+        <span class="highlight">💧 水循环系统</span>
+        <span class="highlight">♻️ 环保包装</span>
+        <span class="highlight">🌱 可持续材料</span>
+      </div>
+      <a href="#certifications" class="btn btn-primary" data-i18n="eco_cta">查看认证详情 →</a>
+    </div>
+    <div class="factory-hero-img" style="background: linear-gradient(135deg, #e8f5e9, var(--cream));">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 20 C100 20 55 80 55 120 C55 148 75 170 100 170 C125 170 145 148 145 120 C145 80 100 20 100 20 Z" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+        <path d="M100 40 L105 60 L125 60 L108 75 L115 95 L100 82 L85 95 L92 75 L75 60 L95 60 Z" fill="#4caf50" fill-opacity="0.6" stroke="#2e7d32" stroke-width="1.5"/>
+        <path d="M70 90 C70 90 60 130 60 145 C60 158 72 168 85 168 C98 168 110 158 110 145 C110 130 100 90 100 90" fill="none" stroke="#4caf50" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.5"/>
+        <path d="M130 90 C130 90 120 130 120 145 C120 158 132 168 145 168 C158 168 170 158 170 145 C170 130 160 90 160 90" fill="none" stroke="#4caf50" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.5"/>
+        <circle cx="85" cy="130" r="4" fill="#4caf50" opacity="0.4"/>
+        <circle cx="75" cy="115" r="3" fill="#4caf50" opacity="0.3"/>
+        <circle cx="120" cy="135" r="3" fill="#4caf50" opacity="0.3"/>
+        <text x="100" y="190" text-anchor="middle" font-size="9" fill="#2e7d32" font-weight="700">ECO-FRIENDLY</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Eco Overview -->
+  <section class="fac-section" id="overview">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="eco_overview_title">绿色制造理念</h2>
+      <p class="fac-section-subtitle" data-i18n="eco_overview_sub">Green Manufacturing Philosophy</p>
+      <div class="fac-desc-grid">
+        <div class="fac-desc-text">
+          <p data-i18n="eco_desc_1">
+            YISMAN将可持续发展融入企业经营的每一个环节。从原材料采购到成品交付，我们慎重评估每一个环节对环境的影响，并持续改进生产工艺和管理方式，以实现更绿色、更负责任的生产模式。
+          </p>
+          <p data-i18n="eco_desc_2">
+            我们优先选用经过OEKO-TEX®认证的环保面料，包括有机棉、天丝™（Lyocell）、莫代尔（Modal）、再生涤纶（Recycled Polyester）等可持续发展材料。所有染料和助剂均符合欧盟REACH法规要求，不含对人体有害的化学物质。
+          </p>
+          <p data-i18n="eco_desc_3">
+            在生产过程中，我们通过优化工艺减少水电消耗，建立废水处理系统实现水资源循环利用。包装材料优先选用可降解、可回收的环保材料。我们坚信，绿色制造不仅是对环境的责任，更是企业长期竞争力的保障。
+          </p>
+        </div>
+        <div>
+          <div class="stats-row" style="margin:0 0 24px 0;">
+            <div class="stat-box">
+              <div class="num" style="color:#2e7d32;">85%</div>
+              <div class="label" data-i18n="eco_stat1">环保面料占比</div>
+            </div>
+            <div class="stat-box">
+              <div class="num" style="color:#2e7d32;">60%</div>
+              <div class="label" data-i18n="eco_stat2">水循环利用率</div>
+            </div>
+            <div class="stat-box">
+              <div class="num" style="color:#2e7d32;">100%</div>
+              <div class="label" data-i18n="eco_stat3">可再生包装</div>
+            </div>
+            <div class="stat-box">
+              <div class="num" style="color:#2e7d32;">5</div>
+              <div class="label" data-i18n="eco_stat4">环保认证数</div>
+            </div>
+          </div>
+          <div class="material-tags">
+            <span class="material-tag">🌱 有机棉</span>
+            <span class="material-tag">🍃 天丝™ Lyocell</span>
+            <span class="material-tag">💚 莫代尔 Modal</span>
+            <span class="material-tag">♻️ 再生涤纶</span>
+            <span class="material-tag">🌿 麻纤维</span>
+            <span class="material-tag">✅ OEKO-TEX®</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="fac-section" id="certifications" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="eco_cert_title">资质认证</h2>
+      <p class="fac-section-subtitle" data-i18n="eco_cert_sub">Certifications & Standards</p>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-icon-big">🌿</div>
+          <h4>OEKO-TEX®<br>Standard 100</h4>
+          <p data-i18n="eco_cert1_desc">国际权威纺织品有害物质检测认证，确保产品不含有害物质，对皮肤友好安全。我们的产品通过OEKO-TEX® Standard 100 Class I认证（婴幼儿最高等级）。</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon-big">♻️</div>
+          <h4 data-i18n="eco_cert2_title">Global Recycled Standard</h4>
+          <p data-i18n="eco_cert2_desc">全球回收标准认证，验证再生材料含量和供应链追溯。我们使用经GRS认证的再生涤纶和再生尼龙面料。</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon-big">📋</div>
+          <h4>BSCI<br>验厂认证</h4>
+          <p data-i18n="eco_cert3_desc">商业社会标准倡议认证，定期接受审计，确保工厂在社会责任、劳工权益、工作环境和环境保护方面符合国际标准。</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon-big">🏅</div>
+          <h4>ISO 9001<br>质量管理</h4>
+          <p data-i18n="eco_cert4_desc">国际标准化组织质量管理体系认证，确保产品和服务从设计到交付全流程符合质量管理标准。</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon-big">🌊</div>
+          <h4 data-i18n="eco_cert5_title">ZDHC 零排放</h4>
+          <p data-i18n="eco_cert5_desc">Zero Discharge of Hazardous Chemicals，我们严格遵守有害化学品零排放承诺，所有废水经处理后达标排放。</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon-big">🔬</div>
+          <h4 data-i18n="eco_cert6_title">REACH 合规</h4>
+          <p data-i18n="eco_cert6_desc">所有产品符合欧盟REACH法规要求，不使用SVHC高关注物质清单中的有害化学品，确保产品安全出口欧洲市场。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability Practices -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="eco_practice_title">可持续发展实践</h2>
+      <p class="fac-section-subtitle" data-i18n="eco_practice_sub">Sustainability Practices</p>
+      <div class="practice-grid">
+        <div class="practice-card">
+          <div class="practice-icon">🌿</div>
+          <div class="practice-content">
+            <h4 data-i18n="eco_prac1_title">环保材料应用</h4>
+            <p data-i18n="eco_prac1_desc">85%以上的产品使用环保面料，包括GOTS认证有机棉、FSC认证天丝™、Lenzing Modal等。逐步淘汰传统涤纶，转用再生涤纶（rPET）替代，每年减少约20吨原生塑料消耗。</p>
+          </div>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">💧</div>
+          <div class="practice-content">
+            <h4 data-i18n="eco_prac2_title">水资源管理</h4>
+            <p data-i18n="eco_prac2_desc">投资建设日处理能力100吨的废水处理站，采用MBR膜生物反应工艺，处理后水质达到GB 4287-2012排放标准。水循环利用率达到60%，年节水量约18,000吨。</p>
+          </div>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">⚡</div>
+          <div class="practice-content">
+            <h4 data-i18n="eco_prac3_title">节能减排</h4>
+            <p data-i18n="eco_prac3_desc">车间全面更换LED节能照明，安装智能电表实时监测能耗。采用变频电动缝纫机，比传统机型节能30%。蒸汽系统余热回收利用，每年减少碳排放约50吨。</p>
+          </div>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">📦</div>
+          <div class="practice-content">
+            <h4 data-i18n="eco_prac4_title">绿色包装方案</h4>
+            <p data-i18n="eco_prac4_desc">全面使用FSC认证再生纸板包装盒，取消塑料吊牌卡，改用再生纸卡。产品包装袋使用可降解PLA（聚乳酸）材料。为客户提供简化包装选项，全年减少塑料使用约5吨。</p>
+          </div>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">♻️</div>
+          <div class="practice-content">
+            <h4 data-i18n="eco_prac5_title">废弃物管理</h4>
+            <p data-i18n="eco_prac5_desc">推行精益生产，通过优化排料和裁剪方案，面料利用率从78%提升至85%。边角料分类回收，与专业的再生资源公司合作进行纤维再生处理。危险废弃物（化学品容器等）交由资质单位处置。</p>
+          </div>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">👥</div>
+          <div class="practice-content">
+            <h4 data-i18n="eco_prac6_title">社会责任</h4>
+            <p data-i18n="eco_prac6_desc">通过BSCI验厂认证，保障员工合法权益。每月组织环保培训，提高全员环保意识。设立绿色生产奖励制度，鼓励员工提出环保改善建议。积极参与社区环保公益活动。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Factory Features -->
+  <section class="fac-section" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="eco_related_title">其他工厂实力</h2>
+      <p class="fac-section-subtitle" data-i18n="eco_related_sub">More Factory Capabilities</p>
+      <div class="fac-features-links">
+        <a href="factory-quality.html" class="fac-feature-link">
+          <div class="icon">✅</div>
+          <h4 data-i18n="fac2_title">专业质检体系</h4>
+          <p data-i18n="fac2_desc">AQL2.5国际验货标准，4阶段质量管控，专业质检团队。</p>
+        </a>
+        <a href="factory-workshop.html" class="fac-feature-link">
+          <div class="icon">🏗️</div>
+          <h4 data-i18n="fac1_title">现代化车间</h4>
+          <p data-i18n="fac1_desc">3000㎡标准厂房，配备先进缝纫设备，车间恒温恒湿。</p>
+        </a>
+        <a href="factory-production.html" class="fac-feature-link">
+          <div class="icon">📦</div>
+          <h4 data-i18n="fac5_title">大货产能</h4>
+          <p data-i18n="fac5_desc">月产能40万+件，能满足大订单需求。旺季产能可弹性调整至60万件/月。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="fac-section" style="background:linear-gradient(135deg, #e8f5e9, var(--cream));">
+    <div class="fac-container cta-block">
+      <h2 data-i18n="eco_cta_title">选择绿色，选择可持续发展</h2>
+      <p style="max-width: 500px; margin: 0 auto 30px;" data-i18n="eco_cta_desc">
+        让您的产品更环保、更可持续。联系我们了解环保面料方案和绿色生产细节。
+      </p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="eco_cta_btn">可持续咨询 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+        <p data-i18n="f_brand_desc">专业女士内衣制造商，15年行业经验，为全球品牌提供OEM/ODM一站式服务。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_quick">快速链接</h4>
+        <a href="index.html" data-i18n="nav_home">首页</a>
+        <a href="products.html" data-i18n="nav_products">产品中心</a>
+        <a href="factory.html" data-i18n="nav_factory">工厂实力</a>
+        <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_products_title">产品系列</h4>
+        <a href="products.html" data-i18n="f_pro1">无钢圈文胸</a>
+        <a href="products.html" data-i18n="f_pro2">蕾丝系列</a>
+        <a href="products.html" data-i18n="f_pro3">运动文胸</a>
+        <a href="products.html" data-i18n="f_pro4">女士内裤</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_contact_title">联系方式</h4>
+        <a>📍 <span data-i18n="con_addr">辽宁省大连市金州区</span></a>
+        <a>📞 <span data-i18n="con_phone">+86 18041167816</span></a>
+        <a>✉️ <span data-i18n="con_email">185436114@qq.com</span></a>
+        <a>💬 WhatsApp: +86 18041167816</a>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="f_copy">© 2026 大连依诗曼服装有限公司 版权所有</div>
+  </footer>
+
+  <button class="back-to-top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

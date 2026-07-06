@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YISMAN Intimates 快速打样 - 7-10天出样，专业版房，免费打样，来图来样定制">
+  <title>快速打样 | YISMAN Intimates 依诗曼服装</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏮</text></svg>">
+  <style>
+    .factory-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, var(--cream), var(--white));
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .factory-hero h1 { font-size: 40px; margin-bottom: 16px; }
+    .factory-hero .subtitle { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+    .factory-hero .highlights { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .factory-hero .highlight { background: var(--rose-light); color: var(--rose); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .factory-hero-img {
+      width: 100%; min-height: 380px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: linear-gradient(135deg, var(--cream), var(--rose-light));
+    }
+
+    .fac-section { padding: 80px 20px; }
+    .fac-section:nth-child(even) { background: var(--cream); }
+    .fac-container { max-width: 1200px; margin: 0 auto; }
+    .fac-section-title { font-size: 32px; margin-bottom: 12px; text-align: center; }
+    .fac-section-subtitle { text-align: center; color: var(--text-light); font-size: 15px; max-width: 600px; margin: 0 auto 50px; }
+
+    .fac-desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .fac-desc-text p { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
+
+    .steps-timeline { max-width: 800px; margin: 0 auto; }
+    .step-card { display: flex; gap: 24px; margin-bottom: 24px; background: white; padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); align-items: flex-start; }
+    .step-num { width: 48px; height: 48px; min-width: 48px; background: var(--navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
+    .step-content h3 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 6px; }
+    .step-content p { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
+    .step-content .step-detail { font-size: 13px; color: var(--rose); font-weight: 500; }
+
+    .sample-card { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+    .sample-info { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .sample-info h3 { font-family: 'Inter', sans-serif; font-size: 18px; margin-bottom: 16px; }
+    .sample-info ul { list-style: none; padding: 0; }
+    .sample-info li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; display: flex; align-items: center; gap: 10px; }
+    .sample-info li:last-child { border-bottom: none; }
+    .sample-info li .check { color: var(--rose); font-size: 18px; }
+
+    .sample-form { background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .sample-form h3 { font-family: 'Inter', sans-serif; font-size: 18px; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; color: var(--dark); }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 14px; transition: var(--transition); background: var(--white); }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--rose); box-shadow: 0 0 0 3px rgba(212,136,158,0.1); }
+
+    .fac-features-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .fac-feature-link { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; transition: var(--transition); text-decoration: none; color: inherit; }
+    .fac-feature-link:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .fac-feature-link .icon { font-size: 36px; margin-bottom: 12px; }
+    .fac-feature-link h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .fac-feature-link p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+    .cta-block { text-align: center; }
+    .cta-block h2 { margin-bottom: 12px; }
+    .cta-block p { color: var(--text-light); margin-bottom: 30px; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 800px; margin: 0 auto 40px; }
+    .stat-box { background: white; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .stat-box .num { font-size: 32px; font-weight: 700; color: var(--rose); font-family: 'Playfair Display', serif; }
+    .stat-box .label { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+    @media (max-width: 1024px) {
+      .factory-hero { grid-template-columns: 1fr; text-align: center; }
+      .factory-hero .highlights { justify-content: center; }
+      .fac-desc-grid { grid-template-columns: 1fr; }
+      .fac-features-links { grid-template-columns: repeat(2, 1fr); }
+      .sample-card { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .fac-features-links { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .step-card { flex-direction: column; text-align: center; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle" role="group" aria-label="Language switch">
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="factory.html" class="active">工厂实力</a>
+        <a href="contact.html">联系我们</a>
+        <a href="contact.html" class="nav-cta">获取报价</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="factory-hero">
+    <div>
+      <h1 data-i18n="sm_hero_title">快速打样</h1>
+      <p class="subtitle" data-i18n="sm_hero_desc">
+        专业版房团队，收到设计稿后7-10天即可完成打样。我们提供免费打样服务，支持来图来样定制。快速响应、精准还原，让您的设计想法第一时间变成实物。
+      </p>
+      <div class="highlights">
+        <span class="highlight">⏱️ 7-10天出样</span>
+        <span class="highlight">🎨 来图来样定制</span>
+        <span class="highlight">🆓 免费打样</span>
+        <span class="highlight">👔 专业版房</span>
+      </div>
+      <a href="#request" class="btn btn-primary" data-i18n="sm_cta">提交打样需求 →</a>
+    </div>
+    <div class="factory-hero-img">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 60 L60 40 L80 55 L100 35 L120 55 L140 40 L160 60" stroke="#D4889E" stroke-width="3" stroke-dasharray="5 3" fill="none"/>
+        <path d="M40 80 L70 80 L70 110 L40 110 Z" fill="#D4889E" fill-opacity="0.4" stroke="#D4889E" stroke-width="2"/>
+        <path d="M80 80 L110 80 L110 110 L80 110 Z" fill="#D4889E" fill-opacity="0.4" stroke="#D4889E" stroke-width="2"/>
+        <path d="M120 80 L150 80 L150 110 L120 110 Z" fill="#D4889E" fill-opacity="0.4" stroke="#D4889E" stroke-width="2"/>
+        <path d="M55 120 L145 120 L135 150 L65 150 Z" fill="#F0D4DC" stroke="#D4889E" stroke-width="2"/>
+        <line x1="55" y1="135" x2="145" y2="135" stroke="#D4889E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="100" y="165" text-anchor="middle" font-size="9" fill="#1A1A2E" font-weight="700">SAMPLING</text>
+        <circle cx="30" cy="45" r="8" fill="#F0D4DC" stroke="#D4889E" stroke-width="2"/>
+        <circle cx="170" cy="45" r="8" fill="#F0D4DC" stroke="#D4889E" stroke-width="2"/>
+        <path d="M20 45 L15 35 L25 35 Z" fill="#D4889E"/>
+        <path d="M180 45 L175 35 L185 35 Z" fill="#D4889E"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Sampling Overview -->
+  <section class="fac-section" id="overview">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="sm_overview_title">快速打样服务</h2>
+      <p class="fac-section-subtitle" data-i18n="sm_overview_sub">Fast Sampling Service</p>
+      <div class="fac-desc-grid">
+        <div class="fac-desc-text">
+          <p data-i18n="sm_desc_1">
+            YISMAN拥有专业的板房团队，配备经验丰富的纸样师和样衣缝制师傅，能够快速精准地将设计图纸转化为实物样品。无论是客户提供设计图、参考图片还是实物样衣，我们都能准确理解和还原。
+          </p>
+          <p data-i18n="sm_desc_2">
+            常规打样周期为7-10个工作日（从收到设计资料确认后开始计算）。对于紧急项目，我们提供加急打样服务，最快3-5天即可出样。所有样品在寄出前均经过严格检查和试穿确认。
+          </p>
+          <p data-i18n="sm_desc_3">
+            我们针对有诚意的询盘提供免费打样服务，仅收取合理的样品邮寄费用。每位客户可享受2-3款免费打样名额，让您在合作前充分了解我们的工艺水平。
+          </p>
+        </div>
+        <div class="stats-row" style="margin:0;">
+          <div class="stat-box">
+            <div class="num">7-10</div>
+            <div class="label" data-i18n="sm_stat1">常规出样 (天)</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">3-5</div>
+            <div class="label" data-i18n="sm_stat2">加急出样 (天)</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">500+</div>
+            <div class="label" data-i18n="sm_stat3">年打样数量</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">98%</div>
+            <div class="label" data-i18n="sm_stat4">打样通过率</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sampling Process -->
+  <section class="fac-section" id="process" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="sm_process_title">打样流程</h2>
+      <p class="fac-section-subtitle" data-i18n="sm_process_sub">Sampling Process</p>
+      <div class="steps-timeline">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3 data-i18n="sm_step1_title">设计稿接收 (Design Receipt)</h3>
+            <p data-i18n="sm_step1_desc">客户提供设计图、效果图、参考图片或实物样衣。我们的技术团队审核设计的可生产性，确认面料辅料需求，评估生产工艺难度，给出优化建议。双方确认打样要求和时间节点。</p>
+            <span class="step-detail" data-i18n="sm_step1_detail">客户需提供：设计图纸/参考图 + 尺寸表 + 面料要求</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3 data-i18n="sm_step2_title">纸样制作 (Pattern Making)</h3>
+            <p data-i18n="sm_step2_desc">纸样师根据设计图和尺寸表进行纸样绘制，使用CAD软件进行放码和排料。对于内衣产品，特别注重曲线的精确度和各部位的比例协调。纸样完成后进行小样验证。</p>
+            <span class="step-detail" data-i18n="sm_step2_detail">使用软件：Gerber AccuMark / Lectra Modaris</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3 data-i18n="sm_step3_title">样衣缝制 (Sample Sewing)</h3>
+            <p data-i18n="sm_step3_desc">经验丰富的样衣工师按照纸样和工艺要求进行样衣缝制。选用指定面料和辅料，严格控制缝制工艺和细节处理。样衣完成后进行初步外观质量检查。</p>
+            <span class="step-detail" data-i18n="sm_step3_detail">样衣工平均工龄：8年以上</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3 data-i18n="sm_step4_title">试穿调整 (Fitting & Adjustment)</h3>
+            <p data-i18n="sm_step4_desc">样衣完成后进行真人试穿，评估穿着效果、舒适度和版型准确性。根据试穿结果进行必要的调整和修改，再次缝制完善。确保样衣在版型、做工、尺寸各方面都达到理想状态。</p>
+            <span class="step-detail" data-i18n="sm_step4_detail">配备专业试穿模特，覆盖S/M/L/XL各尺码</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3 data-i18n="sm_step5_title">客户确认 (Customer Approval)</h3>
+            <p data-i18n="sm_step5_desc">样衣完成后拍摄多角度照片和细节图发给客户确认。客户可以提出修改意见，我们免费提供1-2次修改调整。最终样衣经客户确认后，作为大货生产的标准参考。</p>
+            <span class="step-detail" data-i18n="sm_step5_detail">确认后保留封样记录，大货严格按封样标准生产</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Request -->
+  <section class="fac-section" id="request">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="sm_request_title">提交打样需求</h2>
+      <p class="fac-section-subtitle" data-i18n="sm_request_sub">Submit Sampling Request</p>
+      <div class="sample-card">
+        <div class="sample-info">
+          <h3 data-i18n="sm_request_info">打样须知</h3>
+          <ul>
+            <li><span class="check">✅</span> <span data-i18n="sm_info1">免费打样：每位客户可免费打样2-3款</span></li>
+            <li><span class="check">✅</span> <span data-i18n="sm_info2">修改免费：提供1-2次免费修改调整</span></li>
+            <li><span class="check">✅</span> <span data-i18n="sm_info3">样品邮寄：客户承担实际运费，可到付</span></li>
+            <li><span class="check">✅</span> <span data-i18n="sm_info4">支持格式：设计图(JPG/PDF/AI/CDR)、参考图、实物样衣</span></li>
+            <li><span class="check">✅</span> <span data-i18n="sm_info5">保密承诺：客户设计资料严格保密，未经授权绝不外泄</span></li>
+          </ul>
+        </div>
+        <div class="sample-form">
+          <h3 data-i18n="sm_request_form">填写打样需求</h3>
+          <div class="form-group">
+            <label data-i18n="sm_form_name">您的姓名 *</label>
+            <input type="text" placeholder="Name / 姓名">
+          </div>
+          <div class="form-group">
+            <label data-i18n="sm_form_email">邮箱 / WhatsApp *</label>
+            <input type="text" placeholder="Email or WhatsApp number">
+          </div>
+          <div class="form-group">
+            <label data-i18n="sm_form_type">产品类型 *</label>
+            <select>
+              <option data-i18n="sm_form_type0">请选择产品类型</option>
+              <option data-i18n="sm_form_type1">无钢圈文胸 / Wirefree Bra</option>
+              <option data-i18n="sm_form_type2">蕾丝文胸 / Lace Bra</option>
+              <option data-i18n="sm_form_type3">运动文胸 / Sports Bra</option>
+              <option data-i18n="sm_form_type4">女士内裤 / Panties</option>
+              <option data-i18n="sm_form_type5">其他 / Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="sm_form_quantity">预计订购数量</label>
+            <select>
+              <option>100-500 pcs</option>
+              <option>500-1000 pcs</option>
+              <option>1000-5000 pcs</option>
+              <option>5000+ pcs</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="sm_form_desc">打样要求说明 *</label>
+            <textarea rows="4" placeholder="Please describe your design requirements, style, materials, size, etc."></textarea>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;" data-i18n="sm_form_submit">提交需求 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Factory Features -->
+  <section class="fac-section" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="sm_related_title">其他工厂实力</h2>
+      <p class="fac-section-subtitle" data-i18n="sm_related_sub">More Factory Capabilities</p>
+      <div class="fac-features-links">
+        <a href="factory-design.html" class="fac-feature-link">
+          <div class="icon">🎨</div>
+          <h4 data-i18n="fac4_title">自有设计团队</h4>
+          <p data-i18n="fac4_desc">经验丰富的设计师团队，每季推出新品。可根据客户需求进行定向研发。</p>
+        </a>
+        <a href="factory-workshop.html" class="fac-feature-link">
+          <div class="icon">🏗️</div>
+          <h4 data-i18n="fac1_title">现代化车间</h4>
+          <p data-i18n="fac1_desc">3000㎡标准厂房，配备先进缝纫设备，车间恒温恒湿。</p>
+        </a>
+        <a href="factory-production.html" class="fac-feature-link">
+          <div class="icon">📦</div>
+          <h4 data-i18n="fac5_title">大货产能</h4>
+          <p data-i18n="fac5_desc">月产能40万+件，能满足大订单需求。旺季产能可弹性调整至60万件/月。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="fac-section">
+    <div class="fac-container cta-block">
+      <h2 data-i18n="sm_cta_title">准备好了？开始您的打样之旅</h2>
+      <p style="max-width: 500px; margin: 0 auto 30px;" data-i18n="sm_cta_desc">
+        将您的设计想法发给我们，7-10天即可收到实物样品。快速响应、精准还原。
+      </p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="sm_cta_btn">立即咨询 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+        <p data-i18n="f_brand_desc">专业女士内衣制造商，15年行业经验，为全球品牌提供OEM/ODM一站式服务。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_quick">快速链接</h4>
+        <a href="index.html" data-i18n="nav_home">首页</a>
+        <a href="products.html" data-i18n="nav_products">产品中心</a>
+        <a href="factory.html" data-i18n="nav_factory">工厂实力</a>
+        <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_products_title">产品系列</h4>
+        <a href="products.html" data-i18n="f_pro1">无钢圈文胸</a>
+        <a href="products.html" data-i18n="f_pro2">蕾丝系列</a>
+        <a href="products.html" data-i18n="f_pro3">运动文胸</a>
+        <a href="products.html" data-i18n="f_pro4">女士内裤</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_contact_title">联系方式</h4>
+        <a>📍 <span data-i18n="con_addr">辽宁省大连市金州区</span></a>
+        <a>📞 <span data-i18n="con_phone">+86 18041167816</span></a>
+        <a>✉️ <span data-i18n="con_email">185436114@qq.com</span></a>
+        <a>💬 WhatsApp: +86 18041167816</a>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="f_copy">© 2026 大连依诗曼服装有限公司 版权所有</div>
+  </footer>
+
+  <button class="back-to-top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

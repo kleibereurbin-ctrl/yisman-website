@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YISMAN Intimates 专业质检体系 - AQL2.5国际标准，4阶段质量管控，12+专业质检团队">
+  <title>专业质检体系 | YISMAN Intimates 依诗曼服装</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏮</text></svg>">
+  <style>
+    .factory-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, var(--cream), var(--white));
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .factory-hero h1 { font-size: 40px; margin-bottom: 16px; }
+    .factory-hero .subtitle { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+    .factory-hero .highlights { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .factory-hero .highlight { background: var(--rose-light); color: var(--rose); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .factory-hero-img {
+      width: 100%; min-height: 380px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: linear-gradient(135deg, var(--cream), var(--rose-light));
+    }
+
+    .fac-section { padding: 80px 20px; }
+    .fac-section:nth-child(even) { background: var(--cream); }
+    .fac-container { max-width: 1200px; margin: 0 auto; }
+    .fac-section-title { font-size: 32px; margin-bottom: 12px; text-align: center; }
+    .fac-section-subtitle { text-align: center; color: var(--text-light); font-size: 15px; max-width: 600px; margin: 0 auto 50px; }
+
+    .fac-desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .fac-desc-text p { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
+
+    .steps-timeline { max-width: 800px; margin: 0 auto; }
+    .step-card { display: flex; gap: 24px; margin-bottom: 24px; background: white; padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); align-items: flex-start; }
+    .step-num { width: 48px; height: 48px; min-width: 48px; background: var(--navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
+    .step-content h3 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 6px; }
+    .step-content p { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
+    .step-content .step-detail { font-size: 13px; color: var(--rose); font-weight: 500; }
+
+    .eq-table { width: 100%; border-collapse: collapse; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .eq-table th { background: var(--navy); color: white; padding: 14px 20px; text-align: left; font-size: 14px; }
+    .eq-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .eq-table tr:last-child td { border-bottom: none; }
+    .eq-table tr:hover td { background: var(--cream); }
+    .eq-table-wrap { overflow-x: auto; }
+
+    .fac-features-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .fac-feature-link { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; transition: var(--transition); text-decoration: none; color: inherit; }
+    .fac-feature-link:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .fac-feature-link .icon { font-size: 36px; margin-bottom: 12px; }
+    .fac-feature-link h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .fac-feature-link p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+    .cta-block { text-align: center; }
+    .cta-block h2 { margin-bottom: 12px; }
+    .cta-block p { color: var(--text-light); margin-bottom: 30px; }
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 800px; margin: 0 auto 40px; }
+    .stat-box { background: white; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .stat-box .num { font-size: 32px; font-weight: 700; color: var(--rose); font-family: 'Playfair Display', serif; }
+    .stat-box .label { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+    @media (max-width: 1024px) {
+      .factory-hero { grid-template-columns: 1fr; text-align: center; }
+      .factory-hero .highlights { justify-content: center; }
+      .fac-desc-grid { grid-template-columns: 1fr; }
+      .fac-features-links { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .fac-features-links { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .step-card { flex-direction: column; text-align: center; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle" role="group" aria-label="Language switch">
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="factory.html" class="active">工厂实力</a>
+        <a href="contact.html">联系我们</a>
+        <a href="contact.html" class="nav-cta">获取报价</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="factory-hero">
+    <div>
+      <h1 data-i18n="qc_hero_title">专业质检体系</h1>
+      <p class="subtitle" data-i18n="qc_hero_desc">
+        从面料入库到成品出库，每道工序都经过严格的质量把控。我们严格执行AQL 2.5国际验货标准，拥有12+人的专业质检团队，确保每一件产品都达到客户期望的品质标准。
+      </p>
+      <div class="highlights">
+        <span class="highlight">📋 AQL 2.5 标准</span>
+        <span class="highlight">👥 12+ 质检团队</span>
+        <span class="highlight">🔄 4阶段管控</span>
+        <span class="highlight">🏅 100% 出厂检验</span>
+      </div>
+      <a href="#process" class="btn btn-primary" data-i18n="qc_cta">查看质检流程 →</a>
+    </div>
+    <div class="factory-hero-img">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="80" fill="#F0D4DC" fill-opacity="0.4" stroke="#D4889E" stroke-width="2"/>
+        <circle cx="100" cy="100" r="55" fill="#F0D4DC" fill-opacity="0.3" stroke="#D4889E" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <path d="M100 35 L105 55 L125 55 L108 68 L115 88 L100 75 L85 88 L92 68 L75 55 L95 55 Z" fill="#D4889E" stroke="#1A1A2E" stroke-width="1.5"/>
+        <text x="100" y="125" text-anchor="middle" font-size="10" fill="#1A1A2E" font-weight="700">QC</text>
+        <text x="100" y="140" text-anchor="middle" font-size="7" fill="#D4889E" font-weight="600">QUALITY</text>
+        <circle cx="100" cy="100" r="18" fill="white" fill-opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- QC Overview -->
+  <section class="fac-section" id="overview">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="qc_overview_title">品质管控体系</h2>
+      <p class="fac-section-subtitle" data-i18n="qc_overview_sub">Quality Control System</p>
+      <div class="fac-desc-grid">
+        <div class="fac-desc-text">
+          <p data-i18n="qc_desc_1">
+            YISMAN建立了完善的全流程品质管控体系，严格遵循AQL 2.5国际验货标准（正常检验水平II）。从面料入库到成品出库，我们设置了4道关键质量控制节点，确保问题早发现、早处理，不让一件不合格品流入下道工序。
+          </p>
+          <p data-i18n="qc_desc_2">
+            我们的质检团队由12+名经验丰富的QC人员组成，均经过系统培训和严格考核，熟练掌握各类内衣产品的检验标准和测试方法。团队包括面料检验员、过程巡检员、成品检验员和实验室测试员，各司其职、协同配合。
+          </p>
+          <p data-i18n="qc_desc_3">
+            质检中心配备先进的检测设备，涵盖面料物理性能测试、色牢度测试、尺寸稳定性测试、缝制强度测试等全方位检测能力。所有检测数据实时记录、可追溯。
+          </p>
+        </div>
+        <div class="stats-row" style="margin:0;">
+          <div class="stat-box">
+            <div class="num">4</div>
+            <div class="label" data-i18n="qc_stat1">质检阶段</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">12+</div>
+            <div class="label" data-i18n="qc_stat2">专业质检员</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">100%</div>
+            <div class="label" data-i18n="qc_stat3">出厂检验率</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">AQL2.5</div>
+            <div class="label" data-i18n="qc_stat4">国际标准</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QC Process -->
+  <section class="fac-section" id="process" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="qc_process_title">四阶段质检流程</h2>
+      <p class="fac-section-subtitle" data-i18n="qc_process_sub">4-Stage Quality Control Process</p>
+      <div class="steps-timeline">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3 data-i18n="qc_step1_title">面料入库检验 (Incoming QC)</h3>
+            <p data-i18n="qc_step1_desc">每批面料到货后进行入库前检验：核查面料数量、规格、颜色与订单一致；检测面料色牢度、缩水率、克重、密度等物理指标；检查面料表面疵点、色差、异味等。不合格面料退回处理。</p>
+            <span class="step-detail" data-i18n="qc_step1_detail">检验项目：色牢度测试、缩水率测试、克重检测、外观检验</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3 data-i18n="qc_step2_title">过程巡检 (In-Process QC)</h3>
+            <p data-i18n="qc_step2_desc">生产过程中QC人员每小时对各工位进行巡检：检查半成品缝制质量，包括针距、线迹平整度、尺寸精度等；抽查裁剪、缝制、整烫各环节工艺执行情况；发现问题立即叫停整改，记录问题并追踪闭环。</p>
+            <span class="step-detail" data-i18n="qc_step2_detail">巡检频率：每2小时/次，每批次抽检率≥30%</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3 data-i18n="qc_step3_title">成品检验 (Final Inspection)</h3>
+            <p data-i18n="qc_step3_desc">成品完成后按AQL 2.5标准进行抽样检验：检查成品外观质量（线头、污渍、色差、对称度）；检查缝制质量（针距、线迹、起皱等）；试穿检验和尺寸复核；功能检测（扣子、拉链、松紧带等配件功能）。</p>
+            <span class="step-detail" data-i18n="qc_step3_detail">检验标准：AQL 2.5 / Level II / Normal</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3 data-i18n="qc_step4_title">出货前检验 (Pre-Shipment QC)</h3>
+            <p data-i18n="qc_step4_desc">包装完成后进行出货前最终检验：检查包装完整性和唛头信息准确性；按客户要求进行AQL抽检或100%全检；核对装箱数量、配码、颜色分配等；拍摄存档照片，出具检验报告。客户可委托第三方验货机构到场检验。</p>
+            <span class="step-detail" data-i18n="qc_step4_detail">支持客户委托SGS、BV、Intertek等第三方验货</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testing Equipment -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="qc_equip_title">检测设备清单</h2>
+      <p class="fac-section-subtitle" data-i18n="qc_equip_sub">Testing Equipment List</p>
+      <div class="eq-table-wrap">
+        <table class="eq-table">
+          <thead>
+            <tr>
+              <th data-i18n="qc_eq_no">序号</th>
+              <th data-i18n="qc_eq_name">设备名称</th>
+              <th data-i18n="qc_eq_brand">品牌/型号</th>
+              <th data-i18n="qc_eq_test">检测项目</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>万能强力测试仪</td><td>Instron 3365</td><td data-i18n="qc_test1">面料拉伸强度、缝线强度测试</td></tr>
+            <tr><td>2</td><td>色牢度测试仪</td><td>James Heal Crockmeter</td><td data-i18n="qc_test2">干/湿摩擦色牢度测试</td></tr>
+            <tr><td>3</td><td>耐洗色牢度测试机</td><td>Roaches Washtec</td><td data-i18n="qc_test3">水洗色牢度、皂洗色牢度</td></tr>
+            <tr><td>4</td><td>缩水率测试机</td><td>Electrolux Wascator</td><td data-i18n="qc_test4">面料缩水率测试（5次家庭洗涤）</td></tr>
+            <tr><td>5</td><td>马丁代尔耐磨仪</td><td>James Heal Martindale</td><td data-i18n="qc_test5">面料耐磨性能测试</td></tr>
+            <tr><td>6</td><td>汗渍色牢度测试仪</td><td>Atlas Perspirometer</td><td data-i18n="qc_test6">耐汗渍色牢度测试</td></tr>
+            <tr><td>7</td><td>对色灯箱</td><td>GretagMacbeth SpectraLight</td><td data-i18n="qc_test7">D65/TL84/UVA多光源对色</td></tr>
+            <tr><td>8</td><td>检针机</td><td>Safer DP-600</td><td data-i18n="qc_test8">断针及金属异物检测</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- QC Team -->
+  <section class="fac-section" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="qc_team_title">专业质检团队</h2>
+      <p class="fac-section-subtitle" data-i18n="qc_team_sub">Professional QC Team</p>
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="num">12+</div>
+          <div class="label" data-i18n="qc_team1">总人数</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">6+</div>
+          <div class="label" data-i18n="qc_team2">平均年限</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">3</div>
+          <div class="label" data-i18n="qc_team3">培训次数/年</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">2</div>
+          <div class="label" data-i18n="qc_team4">领班/组长</div>
+        </div>
+      </div>
+      <div class="fac-desc-text" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p data-i18n="qc_team_desc">我们的质检团队成员均经过ISO 9001质量管理体系培训，熟练掌握AQL抽样标准和各项检测操作规程。团队定期参加行业培训和考核，持续提升专业技能。我们承诺：所有出厂产品均经过严格检验，质量问题可追溯、可追责。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Factory Features -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="qc_related_title">其他工厂实力</h2>
+      <p class="fac-section-subtitle" data-i18n="qc_related_sub">More Factory Capabilities</p>
+      <div class="fac-features-links">
+        <a href="factory-workshop.html" class="fac-feature-link">
+          <div class="icon">🏗️</div>
+          <h4 data-i18n="fac1_title">现代化车间</h4>
+          <p data-i18n="fac1_desc">3000㎡标准厂房，配备先进缝纫设备，车间恒温恒湿，确保生产环境稳定。</p>
+        </a>
+        <a href="factory-sampling.html" class="fac-feature-link">
+          <div class="icon">✂️</div>
+          <h4 data-i18n="fac3_title">快速打样</h4>
+          <p data-i18n="fac3_desc">专业版房团队，收到设计稿后7-10天完成打样。支持来图来样定制。</p>
+        </a>
+        <a href="factory-eco.html" class="fac-feature-link">
+          <div class="icon">🌿</div>
+          <h4 data-i18n="fac6_title">绿色环保</h4>
+          <p data-i18n="fac6_desc">通过OEKO-TEX®认证，使用环保面料及染料。坚持可持续发展理念。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="fac-section" style="background:linear-gradient(135deg, var(--cream), var(--rose-light));">
+    <div class="fac-container cta-block">
+      <h2 data-i18n="qc_cta_title">品质是我们不变的承诺</h2>
+      <p style="max-width: 500px; margin: 0 auto 30px;" data-i18n="qc_cta_desc">
+        对品质的执着让YISMAN成为值得信赖的内衣制造商。联系我们了解更多品控细节。
+      </p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="qc_cta_btn">联系我们 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+        <p data-i18n="f_brand_desc">专业女士内衣制造商，15年行业经验，为全球品牌提供OEM/ODM一站式服务。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_quick">快速链接</h4>
+        <a href="index.html" data-i18n="nav_home">首页</a>
+        <a href="products.html" data-i18n="nav_products">产品中心</a>
+        <a href="factory.html" data-i18n="nav_factory">工厂实力</a>
+        <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_products_title">产品系列</h4>
+        <a href="products.html" data-i18n="f_pro1">无钢圈文胸</a>
+        <a href="products.html" data-i18n="f_pro2">蕾丝系列</a>
+        <a href="products.html" data-i18n="f_pro3">运动文胸</a>
+        <a href="products.html" data-i18n="f_pro4">女士内裤</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_contact_title">联系方式</h4>
+        <a>📍 <span data-i18n="con_addr">辽宁省大连市金州区</span></a>
+        <a>📞 <span data-i18n="con_phone">+86 18041167816</span></a>
+        <a>✉️ <span data-i18n="con_email">185436114@qq.com</span></a>
+        <a>💬 WhatsApp: +86 18041167816</a>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="f_copy">© 2026 大连依诗曼服装有限公司 版权所有</div>
+  </footer>
+
+  <button class="back-to-top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

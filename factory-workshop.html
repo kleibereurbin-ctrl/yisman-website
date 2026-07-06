@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YISMAN Intimates 现代化车间 - 3000㎡标准厂房，JUKI/Brother先进设备，恒温恒湿车间，月产能40万+件">
+  <title>现代化车间 | YISMAN Intimates 依诗曼服装</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏮</text></svg>">
+  <style>
+    /* Factory detail page specific styles */
+    .factory-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, var(--cream), var(--white));
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .factory-hero h1 { font-size: 40px; margin-bottom: 16px; }
+    .factory-hero .subtitle { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+    .factory-hero .highlights { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .factory-hero .highlight { background: var(--rose-light); color: var(--rose); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .factory-hero-img {
+      width: 100%; min-height: 380px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: linear-gradient(135deg, var(--cream), var(--rose-light));
+      position: relative;
+    }
+    .factory-hero-img svg { width: 200px; height: 200px; }
+
+    .fac-section { padding: 80px 20px; }
+    .fac-section:nth-child(even) { background: var(--cream); }
+    .fac-container { max-width: 1200px; margin: 0 auto; }
+    .fac-section-title { font-size: 32px; margin-bottom: 12px; text-align: center; }
+    .fac-section-subtitle { text-align: center; color: var(--text-light); font-size: 15px; max-width: 600px; margin: 0 auto 50px; }
+
+    .fac-desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .fac-desc-text p { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
+    .fac-desc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fac-stat-card { background: white; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .fac-stat-card .num { font-size: 36px; font-weight: 700; color: var(--rose); font-family: 'Playfair Display', serif; }
+    .fac-stat-card .label { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+    .eq-table-wrap { overflow-x: auto; }
+    .eq-table { width: 100%; border-collapse: collapse; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .eq-table th { background: var(--navy); color: white; padding: 14px 20px; text-align: left; font-size: 14px; }
+    .eq-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .eq-table tr:last-child td { border-bottom: none; }
+    .eq-table tr:hover td { background: var(--cream); }
+
+    .gallery-grid-4 {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    }
+    .gallery-item {
+      aspect-ratio: 1; border-radius: 8px; overflow: hidden;
+      background: linear-gradient(135deg, var(--cream), var(--rose-light));
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 48px; transition: var(--transition);
+    }
+    .gallery-item:hover { transform: scale(1.03); }
+    .gallery-item .glabel { font-size: 13px; color: var(--text-light); margin-top: 8px; font-family: 'Inter', sans-serif; }
+    .gallery-item.double { grid-column: span 2; grid-row: span 2; font-size: 64px; }
+
+    .fac-features-links {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .fac-feature-link {
+      background: white; padding: 30px; border-radius: var(--radius);
+      box-shadow: var(--shadow); text-align: center; transition: var(--transition);
+      text-decoration: none; color: inherit;
+    }
+    .fac-feature-link:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .fac-feature-link .icon { font-size: 36px; margin-bottom: 12px; }
+    .fac-feature-link h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .fac-feature-link p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+
+    .cta-block { text-align: center; }
+    .cta-block h2 { margin-bottom: 12px; }
+    .cta-block p { color: var(--text-light); margin-bottom: 30px; }
+
+    @media (max-width: 1024px) {
+      .factory-hero { grid-template-columns: 1fr; text-align: center; }
+      .factory-hero .highlights { justify-content: center; }
+      .fac-desc-grid { grid-template-columns: 1fr; }
+      .fac-features-links { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.double { grid-column: span 2; grid-row: span 1; }
+    }
+    @media (max-width: 768px) {
+      .fac-features-links { grid-template-columns: 1fr; }
+      .fac-desc-stats { grid-template-columns: 1fr; }
+      .gallery-grid-4 { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle" role="group" aria-label="Language switch">
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="factory.html" class="active">工厂实力</a>
+        <a href="contact.html">联系我们</a>
+        <a href="contact.html" class="nav-cta">获取报价</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="factory-hero">
+    <div>
+      <h1 data-i18n="ws_hero_title">现代化车间</h1>
+      <p class="subtitle" data-i18n="ws_hero_desc">
+        3000㎡标准化生产车间，配备日本JUKI、Brother等国际一线品牌缝纫设备，恒温恒湿环境控制，确保每一件产品都在最佳条件下生产。
+      </p>
+      <div class="highlights">
+        <span class="highlight">🏭 3000㎡ workshop</span>
+        <span class="highlight">🔧 200+ machines</span>
+        <span class="highlight">🌡️ Temp controlled</span>
+        <span class="highlight">📈 400K+/month</span>
+      </div>
+      <a href="#specs" class="btn btn-primary" data-i18n="ws_cta">查看设备详情 →</a>
+    </div>
+    <div class="factory-hero-img">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="80" width="170" height="100" rx="4" fill="#D4889E" fill-opacity="0.3" stroke="#D4889E" stroke-width="2"/>
+        <rect x="25" y="90" width="30" height="50" rx="2" fill="#D4889E" fill-opacity="0.5"/>
+        <rect x="65" y="90" width="30" height="50" rx="2" fill="#D4889E" fill-opacity="0.5"/>
+        <rect x="105" y="90" width="30" height="50" rx="2" fill="#D4889E" fill-opacity="0.5"/>
+        <rect x="145" y="90" width="30" height="50" rx="2" fill="#D4889E" fill-opacity="0.5"/>
+        <rect x="30" y="65" width="10" height="20" fill="#1A1A2E"/>
+        <rect x="75" y="55" width="10" height="30" fill="#1A1A2E"/>
+        <rect x="120" y="65" width="10" height="20" fill="#1A1A2E"/>
+        <rect x="160" y="60" width="10" height="25" fill="#1A1A2E"/>
+        <rect x="10" y="75" width="180" height="8" rx="2" fill="#C2A59B"/>
+        <circle cx="100" cy="45" r="20" fill="#F0D4DC" stroke="#D4889E" stroke-width="2"/>
+        <path d="M90 45 L100 38 L110 45 L106 55 L94 55 Z" fill="#D4889E"/>
+        <rect x="85" y="14" width="30" height="18" rx="3" fill="#F0D4DC" stroke="#D4889E" stroke-width="1.5"/>
+        <line x1="100" y1="14" x2="100" y2="8" stroke="#D4889E" stroke-width="2"/>
+        <text x="100" y="28" text-anchor="middle" font-size="8" fill="#D4889E" font-weight="700">WORKSHOP</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Workshop Overview -->
+  <section class="fac-section" id="overview">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ws_overview_title">现代化车间概览</h2>
+      <p class="fac-section-subtitle" data-i18n="ws_overview_sub">Modern Workshop Overview</p>
+      <div class="fac-desc-grid">
+        <div class="fac-desc-text">
+          <p data-i18n="ws_desc_1">
+            YISMAN拥有3000平方米的标准化生产车间，严格按照服装生产行业标准设计建造。车间布局科学合理，分为裁剪区、缝制区、整烫区、检验区和包装区五大功能区域，流水线作业高效顺畅。
+          </p>
+          <p data-i18n="ws_desc_2">
+            车间配备200余台日本JUKI和Brother品牌先进缝纫设备，包括电脑平缝机、包缝机、绷缝机、锁眼机、钉扣机等专业机型，可满足各种内衣产品的生产工艺需求。所有设备均按周期进行维护保养，确保稳定运行。
+          </p>
+          <p data-i18n="ws_desc_3">
+            车间采用中央空调系统，实现恒温恒湿控制——温度维持在24-26°C，湿度控制在55%-65%之间，为面料处理和缝制工艺提供最佳环境条件，有效减少因温湿度变化引起的面料收缩、变形等问题。
+          </p>
+        </div>
+        <div class="fac-desc-stats">
+          <div class="fac-stat-card">
+            <div class="num">3000</div>
+            <div class="label" data-i18n="ws_stat1">车间面积 (㎡)</div>
+          </div>
+          <div class="fac-stat-card">
+            <div class="num">200+</div>
+            <div class="label" data-i18n="ws_stat2">缝纫设备 (台)</div>
+          </div>
+          <div class="fac-stat-card">
+            <div class="num">8</div>
+            <div class="label" data-i18n="ws_stat3">生产流水线 (条)</div>
+          </div>
+          <div class="fac-stat-card">
+            <div class="num">400K+</div>
+            <div class="label" data-i18n="ws_stat4">月产能 (件)</div>
+          </div>
+          <div class="fac-stat-card">
+            <div class="num">24-26°C</div>
+            <div class="label" data-i18n="ws_stat5">恒温控制</div>
+          </div>
+          <div class="fac-stat-card">
+            <div class="num">55-65%</div>
+            <div class="label" data-i18n="ws_stat6">湿度控制</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Specs -->
+  <section class="fac-section" id="specs" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ws_equip_title">主要设备清单</h2>
+      <p class="fac-section-subtitle" data-i18n="ws_equip_sub">Major Equipment List</p>
+      <div class="eq-table-wrap">
+        <table class="eq-table">
+          <thead>
+            <tr>
+              <th data-i18n="ws_eq_no">序号</th>
+              <th data-i18n="ws_eq_name">设备名称</th>
+              <th data-i18n="ws_eq_brand">品牌/型号</th>
+              <th data-i18n="ws_eq_qty">数量</th>
+              <th data-i18n="ws_eq_use">用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>电脑平缝机</td><td>JUKI DDL-9000C</td><td>80台</td><td data-i18n="ws_eq_use1">一般缝纫，精密直线缝</td></tr>
+            <tr><td>2</td><td>包缝机</td><td>JUKI MO-6816</td><td>30台</td><td data-i18n="ws_eq_use2">布边包缝，弹性面料拼接</td></tr>
+            <tr><td>3</td><td>绷缝机</td><td>Brother FS-100</td><td>25台</td><td data-i18n="ws_eq_use3">下摆、袖口绷缝，装饰线迹</td></tr>
+            <tr><td>4</td><td>锁眼机</td><td>JUKI LBH-1790</td><td>10台</td><td data-i18n="ws_eq_use4">自动锁眼，扣眼加工</td></tr>
+            <tr><td>5</td><td>钉扣机</td><td>JUKI MB-1800</td><td>8台</td><td data-i18n="ws_eq_use5">自动钉扣，纽扣固定</td></tr>
+            <tr><td>6</td><td>电脑绣花机</td><td>Tajima TMFX</td><td>6台</td><td data-i18n="ws_eq_use6">蕾丝刺绣，花边装饰加工</td></tr>
+            <tr><td>7</td><td>自动裁剪机</td><td>Gerber Taurus</td><td>4台</td><td data-i18n="ws_eq_use7">自动裁剪面料，精准高效</td></tr>
+            <tr><td>8</td><td>整烫设备</td><td>Veit 8320</td><td>15台</td><td data-i18n="ws_eq_use8">蒸汽整烫，定型处理</td></tr>
+            <tr><td>9</td><td>验布机</td><td>Apex 1800</td><td>3台</td><td data-i18n="ws_eq_use9">面料检验，疵点检测</td></tr>
+            <tr><td>10</td><td>自动拉布机</td><td>Eastman CR-200</td><td>2台</td><td data-i18n="ws_eq_use10">自动铺布，多层裁剪准备</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Gallery -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ws_gallery_title">车间实景展示</h2>
+      <p class="fac-section-subtitle" data-i18n="ws_gallery_sub">Workshop Gallery</p>
+      <div class="gallery-grid-4">
+        <div class="gallery-item double">
+          🏭
+          <span class="glabel" data-i18n="ws_gall1">全景生产线</span>
+        </div>
+        <div class="gallery-item">
+          ✂️
+          <span class="glabel" data-i18n="ws_gall2">裁剪区</span>
+        </div>
+        <div class="gallery-item">
+          🧵
+          <span class="glabel" data-i18n="ws_gall3">缝制区</span>
+        </div>
+        <div class="gallery-item">
+          🔧
+          <span class="glabel" data-i18n="ws_gall4">设备维护区</span>
+        </div>
+        <div class="gallery-item">
+          👕
+          <span class="glabel" data-i18n="ws_gall5">整烫包装区</span>
+        </div>
+        <div class="gallery-item">
+          📋
+          <span class="glabel" data-i18n="ws_gall6">质检区</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshop Environment -->
+  <section class="fac-section" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ws_env_title">车间环境标准</h2>
+      <p class="fac-section-subtitle" data-i18n="ws_env_sub">Workshop Environment Standards</p>
+      <div class="gallery-grid-4">
+        <div class="gallery-item">
+          🌡️
+          <span class="glabel" data-i18n="ws_env1">温度 24-26°C</span>
+        </div>
+        <div class="gallery-item">
+          💧
+          <span class="glabel" data-i18n="ws_env2">湿度 55-65%</span>
+        </div>
+        <div class="gallery-item">
+          💡
+          <span class="glabel" data-i18n="ws_env3">光照 500+ Lux</span>
+        </div>
+        <div class="gallery-item">
+          🧹
+          <span class="glabel" data-i18n="ws_env4">无尘 10万级</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Factory Features -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ws_related_title">其他工厂实力</h2>
+      <p class="fac-section-subtitle" data-i18n="ws_related_sub">More Factory Capabilities</p>
+      <div class="fac-features-links">
+        <a href="factory-quality.html" class="fac-feature-link">
+          <div class="icon">✅</div>
+          <h4 data-i18n="fac2_title">专业质检体系</h4>
+          <p data-i18n="fac2_desc">从面料入库到成品出库，每道工序严格把关。AQL2.5国际验货标准执行。</p>
+        </a>
+        <a href="factory-sampling.html" class="fac-feature-link">
+          <div class="icon">✂️</div>
+          <h4 data-i18n="fac3_title">快速打样</h4>
+          <p data-i18n="fac3_desc">专业版房团队，收到设计稿后7-10天完成打样。支持来图来样定制。</p>
+        </a>
+        <a href="factory-production.html" class="fac-feature-link">
+          <div class="icon">📦</div>
+          <h4 data-i18n="fac5_title">大货产能</h4>
+          <p data-i18n="fac5_desc">月产能40万+件，能满足大订单需求。旺季产能可弹性调整至60万件/月。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="fac-section" style="background:linear-gradient(135deg, var(--cream), var(--rose-light));">
+    <div class="fac-container cta-block">
+      <h2 data-i18n="ws_cta_title">想要参观我们的车间？</h2>
+      <p style="max-width: 500px; margin: 0 auto 30px;" data-i18n="ws_cta_desc">
+        欢迎莅临参观！我们随时为您安排工厂参观行程，亲眼见证我们的生产实力。
+      </p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="ws_cta_btn">预约参观 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+        <p data-i18n="f_brand_desc">专业女士内衣制造商，15年行业经验，为全球品牌提供OEM/ODM一站式服务。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_quick">快速链接</h4>
+        <a href="index.html" data-i18n="nav_home">首页</a>
+        <a href="products.html" data-i18n="nav_products">产品中心</a>
+        <a href="factory.html" data-i18n="nav_factory">工厂实力</a>
+        <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_products_title">产品系列</h4>
+        <a href="products.html" data-i18n="f_pro1">无钢圈文胸</a>
+        <a href="products.html" data-i18n="f_pro2">蕾丝系列</a>
+        <a href="products.html" data-i18n="f_pro3">运动文胸</a>
+        <a href="products.html" data-i18n="f_pro4">女士内裤</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_contact_title">联系方式</h4>
+        <a>📍 <span data-i18n="con_addr">辽宁省大连市金州区</span></a>
+        <a>📞 <span data-i18n="con_phone">+86 18041167816</span></a>
+        <a>✉️ <span data-i18n="con_email">185436114@qq.com</span></a>
+        <a>💬 WhatsApp: +86 18041167816</a>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="f_copy">© 2026 大连依诗曼服装有限公司 版权所有</div>
+  </footer>
+
+  <button class="back-to-top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

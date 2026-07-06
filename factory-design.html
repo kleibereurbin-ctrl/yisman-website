@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YISMAN Intimates 自有设计团队 - 8人设计师团队，CAD/CAM数字化制版，每季新款，OEM/ODM定制设计">
+  <title>自有设计团队 | YISMAN Intimates 依诗曼服装</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏮</text></svg>">
+  <style>
+    .factory-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, var(--cream), var(--white));
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .factory-hero h1 { font-size: 40px; margin-bottom: 16px; }
+    .factory-hero .subtitle { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+    .factory-hero .highlights { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .factory-hero .highlight { background: var(--rose-light); color: var(--rose); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .factory-hero-img {
+      width: 100%; min-height: 380px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: linear-gradient(135deg, var(--cream), var(--rose-light));
+    }
+
+    .fac-section { padding: 80px 20px; }
+    .fac-section:nth-child(even) { background: var(--cream); }
+    .fac-container { max-width: 1200px; margin: 0 auto; }
+    .fac-section-title { font-size: 32px; margin-bottom: 12px; text-align: center; }
+    .fac-section-subtitle { text-align: center; color: var(--text-light); font-size: 15px; max-width: 600px; margin: 0 auto 50px; }
+
+    .fac-desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .fac-desc-text p { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
+
+    .steps-timeline { max-width: 800px; margin: 0 auto; }
+    .step-card { display: flex; gap: 24px; margin-bottom: 24px; background: white; padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); align-items: flex-start; }
+    .step-num { width: 48px; height: 48px; min-width: 48px; background: var(--navy); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; }
+    .step-content h3 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 6px; }
+    .step-content p { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
+
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .team-card { background: white; padding: 30px 20px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .team-card .avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--cream); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 32px; }
+    .team-card h4 { font-family: 'Inter', sans-serif; font-size: 14px; margin-bottom: 4px; }
+    .team-card p { font-size: 12px; color: var(--text-light); }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .portfolio-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .portfolio-img { height: 200px; background: linear-gradient(135deg, var(--cream), var(--rose-light)); display: flex; align-items: center; justify-content: center; font-size: 48px; }
+    .portfolio-info { padding: 20px; }
+    .portfolio-info h4 { font-family: 'Inter', sans-serif; font-size: 15px; margin-bottom: 6px; }
+    .portfolio-info p { font-size: 13px; color: var(--text-light); }
+
+    .fac-features-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .fac-feature-link { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; transition: var(--transition); text-decoration: none; color: inherit; }
+    .fac-feature-link:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .fac-feature-link .icon { font-size: 36px; margin-bottom: 12px; }
+    .fac-feature-link h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .fac-feature-link p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+    .cta-block { text-align: center; }
+    .cta-block h2 { margin-bottom: 12px; }
+    .cta-block p { color: var(--text-light); margin-bottom: 30px; }
+
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 800px; margin: 0 auto 40px; }
+    .stat-box { background: white; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .stat-box .num { font-size: 32px; font-weight: 700; color: var(--rose); font-family: 'Playfair Display', serif; }
+    .stat-box .label { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+    @media (max-width: 1024px) {
+      .factory-hero { grid-template-columns: 1fr; text-align: center; }
+      .factory-hero .highlights { justify-content: center; }
+      .fac-desc-grid { grid-template-columns: 1fr; }
+      .fac-features-links { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .fac-features-links { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .step-card { flex-direction: column; text-align: center; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle" role="group" aria-label="Language switch">
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="factory.html" class="active">工厂实力</a>
+        <a href="contact.html">联系我们</a>
+        <a href="contact.html" class="nav-cta">获取报价</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="factory-hero">
+    <div>
+      <h1 data-i18n="ds_hero_title">自有设计团队</h1>
+      <p class="subtitle" data-i18n="ds_hero_desc">
+        YISMAN拥有8人的专业设计团队，包括资深设计师、版型师和技术顾问。我们紧跟国际内衣潮流趋势，每季推出新款系列。同时可根据客户需求进行定向研发，提供OEM/ODM全套设计解决方案。
+      </p>
+      <div class="highlights">
+        <span class="highlight">👥 8人设计团队</span>
+        <span class="highlight">🖥️ CAD/CAM制版</span>
+        <span class="highlight">📅 每季新款</span>
+        <span class="highlight">🌐 国际潮流追踪</span>
+      </div>
+      <a href="#service" class="btn btn-primary" data-i18n="ds_cta">了解设计服务 →</a>
+    </div>
+    <div class="factory-hero-img">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="80" r="35" fill="#F0D4DC" stroke="#D4889E" stroke-width="2"/>
+        <path d="M65 115 Q80 130 100 130 Q120 130 135 115" fill="#F0D4DC" stroke="#D4889E" stroke-width="2"/>
+        <rect x="85" y="115" width="30" height="20" rx="3" fill="#D4889E" fill-opacity="0.3" stroke="#D4889E" stroke-width="1.5"/>
+        <circle cx="72" cy="70" r="4" fill="#D4889E"/>
+        <circle cx="128" cy="70" r="4" fill="#D4889E"/>
+        <path d="M90 80 Q100 90 110 80" stroke="#D4889E" stroke-width="2" fill="none"/>
+        <rect x="50" y="145" width="100" height="35" rx="4" fill="white" stroke="#D4889E" stroke-width="1.5"/>
+        <line x1="55" y1="155" x2="145" y2="155" stroke="#D4889E" stroke-width="1" stroke-dasharray="3 2"/>
+        <circle cx="75" cy="155" r="6" fill="#D4889E" fill-opacity="0.3"/>
+        <circle cx="100" cy="155" r="6" fill="#D4889E" fill-opacity="0.3"/>
+        <circle cx="125" cy="155" r="6" fill="#D4889E" fill-opacity="0.3"/>
+        <text x="100" y="193" text-anchor="middle" font-size="9" fill="#1A1A2E" font-weight="700">DESIGN</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Design Team Overview -->
+  <section class="fac-section" id="overview">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ds_overview_title">强大设计团队</h2>
+      <p class="fac-section-subtitle" data-i18n="ds_overview_sub">Professional Design Team</p>
+      <div class="fac-desc-grid">
+        <div class="fac-desc-text">
+          <p data-i18n="ds_desc_1">
+            YISMAN的设计团队由8名经验丰富的专业人员组成，包括首席设计师、面料开发专员、版型设计师和技术工艺师。团队核心成员均拥有10年以上内衣行业设计经验，曾服务于多个国际知名品牌。
+          </p>
+          <p data-i18n="ds_desc_2">
+            我们采用CAD/CAM数字化设计系统（Gerber AccuMark、Lectra Modaris），实现从设计构思到纸样制作的全流程数字化。通过3D虚拟试衣技术，可以在打样前直观预览设计效果，大幅缩短开发周期。
+          </p>
+          <p data-i18n="ds_desc_3">
+            团队每季度前往欧洲、日韩参加国际内衣展会（如Paris Intim'Expo、ISPO），追踪最新面料科技、色彩趋势和设计风格。结合国内市场特点和客户需求，开发兼具时尚感和实穿性的内衣产品。
+          </p>
+        </div>
+        <div class="stats-row" style="margin:0;">
+          <div class="stat-box">
+            <div class="num">8</div>
+            <div class="label" data-i18n="ds_stat1">设计师团队</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">10+</div>
+            <div class="label" data-i18n="ds_stat2">平均经验 (年)</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">120+</div>
+            <div class="label" data-i18n="ds_stat3">年均新款设计</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">200+</div>
+            <div class="label" data-i18n="ds_stat4">合作品牌数量</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members -->
+  <section class="fac-section" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ds_team_title">团队成员</h2>
+      <p class="fac-section-subtitle" data-i18n="ds_team_sub">Meet Our Design Team</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar">👩‍🎨</div>
+          <h4>首席设计师</h4>
+          <p data-i18n="ds_member1">20年内衣设计经验，曾任国际品牌设计总监，擅长蕾丝和时尚款设计</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">👨‍💼</div>
+          <h4>版型设计师</h4>
+          <p data-i18n="ds_member2">15年打版经验，精通内衣结构设计，擅长无钢圈和塑身衣版型</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">🧑‍🔬</div>
+          <h4>面料开发专员</h4>
+          <p data-i18n="ds_member3">12年面料研发经验，熟悉功能性面料特性，负责新材料引进</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar">👩‍💻</div>
+          <h4>CAD技术师</h4>
+          <p data-i18n="ds_member4">8年CAD制版经验，精通Gerber/ Lectra系统，负责数字化制版放码</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Service Process -->
+  <section class="fac-section" id="service">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ds_service_title">设计服务流程</h2>
+      <p class="fac-section-subtitle" data-i18n="ds_service_sub">Design Service Process</p>
+      <div class="steps-timeline">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3 data-i18n="ds_svc1_title">需求沟通 (Requirement Brief)</h3>
+            <p data-i18n="ds_svc1_desc">深入了解客户品牌定位、目标市场、目标客群和风格偏好。分析客户提供的参考图、竞品信息和产品要求。确定设计方向、品类结构和开发时间表。</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3 data-i18n="ds_svc2_title">创意设计 (Concept Design)</h3>
+            <p data-i18n="ds_svc2_desc">设计师进行创意构思，绘制设计效果图和款式结构图。结合面料选择、色彩搭配和工艺细节，提供2-3个设计方向供客户选择。通过3D虚拟试衣展示设计效果。</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3 data-i18n="ds_svc3_title">技术实现 (Tech Development)</h3>
+            <p data-i18n="ds_svc3_desc">设计确认后，版型师进行精确纸样制作和放码。工艺师编写生产工艺单，明确每道工序的操作要求和质量标准。CAD制版、排料优化，为后续打样和大货生产做好准备。</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3 data-i18n="ds_svc4_title">样衣跟进 (Sample Follow-up)</h3>
+            <p data-i18n="ds_svc4_desc">设计师全程跟进打样过程，确保样品准确还原设计效果。试穿评估后进行调整优化，直至达到最佳效果。最终封样确认，为批量生产提供标准。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="fac-section" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ds_portfolio_title">设计案例</h2>
+      <p class="fac-section-subtitle" data-i18n="ds_portfolio_sub">Portfolio Examples</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-img">🌸</div>
+          <div class="portfolio-info">
+            <h4 data-i18n="ds_port1_title">蕾丝花边文胸系列</h4>
+            <p data-i18n="ds_port1_desc">法式蕾丝与弹力网布拼接，性感优雅。含钢圈与无钢圈两种款式，覆盖A-D罩杯。</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img">🏃‍♀️</div>
+          <div class="portfolio-info">
+            <h4 data-i18n="ds_port2_title">运动文胸系列</h4>
+            <p data-i18n="ds_port2_desc">高支撑性运动内衣，吸湿排汗面料，防震结构设计，适合中高强度运动。</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-img">💎</div>
+          <div class="portfolio-info">
+            <h4 data-i18n="ds_port3_title">无痕内衣系列</h4>
+            <p data-i18n="ds_port3_desc">一片式热压无缝工艺，隐形无痕设计，舒适贴合，适合贴身穿着和搭配紧身衣物。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Factory Features -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="ds_related_title">其他工厂实力</h2>
+      <p class="fac-section-subtitle" data-i18n="ds_related_sub">More Factory Capabilities</p>
+      <div class="fac-features-links">
+        <a href="factory-sampling.html" class="fac-feature-link">
+          <div class="icon">✂️</div>
+          <h4 data-i18n="fac3_title">快速打样</h4>
+          <p data-i18n="fac3_desc">专业版房团队，收到设计稿后7-10天完成打样。支持来图来样定制。</p>
+        </a>
+        <a href="factory-workshop.html" class="fac-feature-link">
+          <div class="icon">🏗️</div>
+          <h4 data-i18n="fac1_title">现代化车间</h4>
+          <p data-i18n="fac1_desc">3000㎡标准厂房，配备先进缝纫设备，车间恒温恒湿。</p>
+        </a>
+        <a href="factory-quality.html" class="fac-feature-link">
+          <div class="icon">✅</div>
+          <h4 data-i18n="fac2_title">专业质检体系</h4>
+          <p data-i18n="fac2_desc">AQL2.5国际验货标准，4阶段质量管控，专业质检团队。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="fac-section" style="background:linear-gradient(135deg, var(--cream), var(--rose-light));">
+    <div class="fac-container cta-block">
+      <h2 data-i18n="ds_cta_title">让我们的设计师为您打造专属系列</h2>
+      <p style="max-width: 500px; margin: 0 auto 30px;" data-i18n="ds_cta_desc">
+        从创意到成品，YISMAN设计团队全程为您服务。免费设计咨询，欢迎联系我们。
+      </p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="ds_cta_btn">获取设计方案 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+        <p data-i18n="f_brand_desc">专业女士内衣制造商，15年行业经验，为全球品牌提供OEM/ODM一站式服务。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_quick">快速链接</h4>
+        <a href="index.html" data-i18n="nav_home">首页</a>
+        <a href="products.html" data-i18n="nav_products">产品中心</a>
+        <a href="factory.html" data-i18n="nav_factory">工厂实力</a>
+        <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_products_title">产品系列</h4>
+        <a href="products.html" data-i18n="f_pro1">无钢圈文胸</a>
+        <a href="products.html" data-i18n="f_pro2">蕾丝系列</a>
+        <a href="products.html" data-i18n="f_pro3">运动文胸</a>
+        <a href="products.html" data-i18n="f_pro4">女士内裤</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_contact_title">联系方式</h4>
+        <a>📍 <span data-i18n="con_addr">辽宁省大连市金州区</span></a>
+        <a>📞 <span data-i18n="con_phone">+86 18041167816</span></a>
+        <a>✉️ <span data-i18n="con_email">185436114@qq.com</span></a>
+        <a>💬 WhatsApp: +86 18041167816</a>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="f_copy">© 2026 大连依诗曼服装有限公司 版权所有</div>
+  </footer>
+
+  <button class="back-to-top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

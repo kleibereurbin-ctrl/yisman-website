@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YISMAN Intimates 大货产能 - 月产能40万+件，8条产线，200+熟练工人，出口30+国家，OEM/ODM批量生产">
+  <title>大货产能 | YISMAN Intimates 依诗曼服装</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏮</text></svg>">
+  <style>
+    .factory-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, var(--cream), var(--white));
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: 1200px; margin: 0 auto;
+    }
+    .factory-hero h1 { font-size: 40px; margin-bottom: 16px; }
+    .factory-hero .subtitle { font-size: 15px; color: var(--text-light); line-height: 1.8; margin-bottom: 20px; }
+    .factory-hero .highlights { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+    .factory-hero .highlight { background: var(--rose-light); color: var(--rose); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .factory-hero-img {
+      width: 100%; min-height: 380px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: linear-gradient(135deg, var(--cream), var(--rose-light));
+    }
+
+    .fac-section { padding: 80px 20px; }
+    .fac-section:nth-child(even) { background: var(--cream); }
+    .fac-container { max-width: 1200px; margin: 0 auto; }
+    .fac-section-title { font-size: 32px; margin-bottom: 12px; text-align: center; }
+    .fac-section-subtitle { text-align: center; color: var(--text-light); font-size: 15px; max-width: 600px; margin: 0 auto 50px; }
+
+    .fac-desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .fac-desc-text p { font-size: 15px; color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
+
+    .stats-big { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 50px; }
+    .stat-big-card { background: white; padding: 40px 20px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .stat-big-card .num { font-size: 42px; font-weight: 700; color: var(--rose); font-family: 'Playfair Display', serif; }
+    .stat-big-card .label { font-size: 14px; color: var(--text-light); margin-top: 8px; }
+
+    .timeline-table-wrap { overflow-x: auto; }
+    .timeline-table { width: 100%; border-collapse: collapse; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .timeline-table th { background: var(--navy); color: white; padding: 14px 20px; text-align: center; font-size: 14px; }
+    .timeline-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; text-align: center; }
+    .timeline-table tr:last-child td { border-bottom: none; }
+    .timeline-table tr:hover td { background: var(--cream); }
+    .timeline-table .highlight-row { background: var(--rose-light); font-weight: 600; }
+
+    .qa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .qa-card { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+    .qa-card .icon { font-size: 36px; margin-bottom: 12px; }
+    .qa-card h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .qa-card p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+
+    .fac-features-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .fac-feature-link { background: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; transition: var(--transition); text-decoration: none; color: inherit; }
+    .fac-feature-link:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .fac-feature-link .icon { font-size: 36px; margin-bottom: 12px; }
+    .fac-feature-link h4 { font-family: 'Inter', sans-serif; font-size: 16px; margin-bottom: 8px; }
+    .fac-feature-link p { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+    .cta-block { text-align: center; }
+    .cta-block h2 { margin-bottom: 12px; }
+    .cta-block p { color: var(--text-light); margin-bottom: 30px; }
+
+    .exports-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .export-item { background: white; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; font-size: 14px; }
+    .export-item .flag { font-size: 28px; margin-bottom: 8px; display: block; }
+    .export-item .region { font-weight: 600; color: var(--navy); }
+
+    @media (max-width: 1024px) {
+      .factory-hero { grid-template-columns: 1fr; text-align: center; }
+      .factory-hero .highlights { justify-content: center; }
+      .fac-desc-grid { grid-template-columns: 1fr; }
+      .stats-big { grid-template-columns: repeat(2, 1fr); }
+      .qa-grid { grid-template-columns: repeat(2, 1fr); }
+      .fac-features-links { grid-template-columns: repeat(2, 1fr); }
+      .exports-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .stats-big { grid-template-columns: repeat(2, 1fr); }
+      .qa-grid { grid-template-columns: 1fr; }
+      .fac-features-links { grid-template-columns: 1fr; }
+      .exports-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle" role="group" aria-label="Language switch">
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="factory.html" class="active">工厂实力</a>
+        <a href="contact.html">联系我们</a>
+        <a href="contact.html" class="nav-cta">获取报价</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="factory-hero">
+    <div>
+      <h1 data-i18n="pr_hero_title">大货产能</h1>
+      <p class="subtitle" data-i18n="pr_hero_desc">
+        YISMAN拥有强大的批量生产能力，月均产能40万+件，旺季峰值可达60万件。8条专业生产流水线，200+名熟练技术工人，产品远销全球30多个国家和地区，是值得信赖的大规模内衣制造商。
+      </p>
+      <div class="highlights">
+        <span class="highlight">📦 400K+/月产能</span>
+        <span class="highlight">🔟 8条流水线</span>
+        <span class="highlight">👷 200+员工</span>
+        <span class="highlight">🌍 30+出口国</span>
+      </div>
+      <a href="#timeline" class="btn btn-primary" data-i18n="pr_cta">查看生产周期 →</a>
+    </div>
+    <div class="factory-hero-img">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="60" width="170" height="100" rx="5" fill="#F0D4DC" fill-opacity="0.4" stroke="#D4889E" stroke-width="2"/>
+        <rect x="15" y="55" width="170" height="10" rx="3" fill="#D4889E"/>
+        <circle cx="35" cy="60" r="4" fill="white"/>
+        <circle cx="55" cy="60" r="4" fill="white"/>
+        <circle cx="75" cy="60" r="4" fill="white"/>
+        <rect x="30" y="80" width="40" height="60" rx="2" fill="#D4889E" fill-opacity="0.4" stroke="#D4889E" stroke-width="1.5"/>
+        <rect x="80" y="80" width="40" height="60" rx="2" fill="#D4889E" fill-opacity="0.4" stroke="#D4889E" stroke-width="1.5"/>
+        <rect x="130" y="80" width="40" height="60" rx="2" fill="#D4889E" fill-opacity="0.4" stroke="#D4889E" stroke-width="1.5"/>
+        <rect x="35" y="90" width="30" height="40" rx="2" fill="white" fill-opacity="0.5"/>
+        <rect x="85" y="90" width="30" height="40" rx="2" fill="white" fill-opacity="0.5"/>
+        <rect x="135" y="90" width="30" height="40" rx="2" fill="white" fill-opacity="0.5"/>
+        <line x1="50" y1="110" x2="50" y2="130" stroke="#D4889E" stroke-width="1.5"/>
+        <line x1="100" y1="110" x2="100" y2="130" stroke="#D4889E" stroke-width="1.5"/>
+        <line x1="150" y1="110" x2="150" y2="130" stroke="#D4889E" stroke-width="1.5"/>
+        <text x="100" y="175" text-anchor="middle" font-size="9" fill="#1A1A2E" font-weight="700">MASS PRODUCTION</text>
+        <path d="M95 45 L100 38 L105 45 Z" fill="#D4889E"/>
+        <rect x="92" y="30" width="16" height="16" rx="2" fill="#F0D4DC" stroke="#D4889E" stroke-width="1.5"/>
+        <rect x="94" y="32" width="12" height="4" rx="1" fill="#D4889E"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Key Stats -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="pr_stats_title">产能数据</h2>
+      <p class="fac-section-subtitle" data-i18n="pr_stats_sub">Production Capacity Data</p>
+      <div class="stats-big">
+        <div class="stat-big-card">
+          <div class="num">400K+</div>
+          <div class="label" data-i18n="pr_stat1">月产能（件）</div>
+        </div>
+        <div class="stat-big-card">
+          <div class="num">600K</div>
+          <div class="label" data-i18n="pr_stat2">旺季峰值（件/月）</div>
+        </div>
+        <div class="stat-big-card">
+          <div class="num">8</div>
+          <div class="label" data-i18n="pr_stat3">生产流水线（条）</div>
+        </div>
+        <div class="stat-big-card">
+          <div class="num">200+</div>
+          <div class="label" data-i18n="pr_stat4">熟练工人（人）</div>
+        </div>
+        <div class="stat-big-card">
+          <div class="num">30+</div>
+          <div class="label" data-i18n="pr_stat5">出口国家</div>
+        </div>
+        <div class="stat-big-card">
+          <div class="num">5M+</div>
+          <div class="label" data-i18n="pr_stat6">年产量（件）</div>
+        </div>
+        <div class="stat-big-card">
+          <div class="num">15+</div>
+          <div class="label" data-i18n="pr_stat7">行业经验（年）</div>
+        </div>
+        <div class="stat-big-card">
+          <div class="num">98.5%</div>
+          <div class="label" data-i18n="pr_stat8">准时交付率</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Timeline -->
+  <section class="fac-section" id="timeline" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="pr_timeline_title">生产周期参考</h2>
+      <p class="fac-section-subtitle" data-i18n="pr_timeline_sub">Production Timeline by Order Size</p>
+      <div class="timeline-table-wrap">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th data-i18n="pr_tl_qty">订单数量</th>
+              <th data-i18n="pr_tl_sampling">打样周期</th>
+              <th data-i18n="pr_tl_prod">大货生产</th>
+              <th data-i18n="pr_tl_total">总周期</th>
+              <th data-i18n="pr_tl_note">说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>500 - 1,000 pcs</td>
+              <td>7-10 days</td>
+              <td>15-20 days</td>
+              <td>22-30 days</td>
+              <td data-i18n="pr_tl_note1">小批量试订单</td>
+            </tr>
+            <tr>
+              <td>1,000 - 5,000 pcs</td>
+              <td>7-10 days</td>
+              <td>20-30 days</td>
+              <td>27-40 days</td>
+              <td data-i18n="pr_tl_note2">常规订单量</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>5,000 - 10,000 pcs</td>
+              <td>7-10 days</td>
+              <td>30-40 days</td>
+              <td>37-50 days</td>
+              <td data-i18n="pr_tl_note3">推荐大批量</td>
+            </tr>
+            <tr>
+              <td>10,000 - 50,000 pcs</td>
+              <td>7-10 days</td>
+              <td>40-60 days</td>
+              <td>47-70 days</td>
+              <td data-i18n="pr_tl_note4">大批量订单</td>
+            </tr>
+            <tr>
+              <td>50,000+ pcs</td>
+              <td>7-10 days</td>
+              <td>60-90 days</td>
+              <td>67-100 days</td>
+              <td data-i18n="pr_tl_note5">超大批量，需排期</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center;font-size:13px;color:var(--text-light);margin-top:16px;" data-i18n="pr_tl_footnote">* 以上周期为常规参考，实际周期视产品复杂程度、面料交期等因素有所调整</p>
+    </div>
+  </section>
+
+  <!-- Quality During Production -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="pr_qa_title">大货生产过程质量保障</h2>
+      <p class="fac-section-subtitle" data-i18n="pr_qa_sub">Quality Assurance During Mass Production</p>
+      <div class="qa-grid">
+        <div class="qa-card">
+          <div class="icon">🏁</div>
+          <h4 data-i18n="pr_qa1_title">产前封样</h4>
+          <p data-i18n="pr_qa1_desc">大货投产前，由确认样衣指导产前样制作，经品质部确认后方可批量生产，确保大货品质与样品一致。</p>
+        </div>
+        <div class="qa-card">
+          <div class="icon">🔍</div>
+          <h4 data-i18n="pr_qa2_title">首件检验</h4>
+          <p data-i18n="pr_qa2_desc">每条生产线首批产品须经QC检验确认合格后，方可继续批量生产。首件不合格则查找原因并调整。</p>
+        </div>
+        <div class="qa-card">
+          <div class="icon">🔄</div>
+          <h4 data-i18n="pr_qa3_title">巡回质检</h4>
+          <p data-i18n="pr_qa3_desc">生产过程中QC定时巡检各工位，抽检半成品质量。发现异常立即停线整改，问题闭环管理。</p>
+        </div>
+        <div class="qa-card">
+          <div class="icon">📊</div>
+          <h4 data-i18n="pr_qa4_title">尾期抽检</h4>
+          <p data-i18n="pr_qa4_desc">大货完成后按AQL 2.5标准进行随机抽检。支持客户或第三方验货机构到场检验。</p>
+        </div>
+        <div class="qa-card">
+          <div class="icon">📦</div>
+          <h4 data-i18n="pr_qa5_title">包装检验</h4>
+          <p data-i18n="pr_qa5_desc">包装前逐件检查外观质量、线头处理、配件牢固度等。包装后核对标签、数量和包装完好性。</p>
+        </div>
+        <div class="qa-card">
+          <div class="icon">🚢</div>
+          <h4 data-i18n="pr_qa6_title">出货前确认</h4>
+          <p data-i18n="pr_qa6_desc">拍照存档、出具出货检验报告。所有质量记录可追溯，为客户提供完整的品质证明文件。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Export Markets -->
+  <section class="fac-section" style="background: var(--cream);">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="pr_export_title">全球出口市场</h2>
+      <p class="fac-section-subtitle" data-i18n="pr_export_sub">Global Export Markets</p>
+      <div class="exports-grid">
+        <div class="export-item">
+          <span class="flag">🇺🇸</span>
+          <span class="region" data-i18n="pr_export1">北美市场</span>
+          <p style="font-size:12px;color:var(--text-light);">美国、加拿大</p>
+        </div>
+        <div class="export-item">
+          <span class="flag">🇪🇺</span>
+          <span class="region" data-i18n="pr_export2">欧洲市场</span>
+          <p style="font-size:12px;color:var(--text-light);">英国、德国、法国、意大利、西班牙、荷兰</p>
+        </div>
+        <div class="export-item">
+          <span class="flag">🇯🇵</span>
+          <span class="region" data-i18n="pr_export3">东亚市场</span>
+          <p style="font-size:12px;color:var(--text-light);">日本、韩国</p>
+        </div>
+        <div class="export-item">
+          <span class="flag">🇦🇺</span>
+          <span class="region" data-i18n="pr_export4">大洋洲市场</span>
+          <p style="font-size:12px;color:var(--text-light);">澳大利亚、新西兰</p>
+        </div>
+        <div class="export-item">
+          <span class="flag">🇦🇪</span>
+          <span class="region" data-i18n="pr_export5">中东市场</span>
+          <p style="font-size:12px;color:var(--text-light);">阿联酋、沙特阿拉伯、以色列</p>
+        </div>
+        <div class="export-item">
+          <span class="flag">🇧🇷</span>
+          <span class="region" data-i18n="pr_export6">南美市场</span>
+          <p style="font-size:12px;color:var(--text-light);">巴西、智利、阿根廷</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Factory Features -->
+  <section class="fac-section">
+    <div class="fac-container">
+      <h2 class="fac-section-title" data-i18n="pr_related_title">其他工厂实力</h2>
+      <p class="fac-section-subtitle" data-i18n="pr_related_sub">More Factory Capabilities</p>
+      <div class="fac-features-links">
+        <a href="factory-workshop.html" class="fac-feature-link">
+          <div class="icon">🏗️</div>
+          <h4 data-i18n="fac1_title">现代化车间</h4>
+          <p data-i18n="fac1_desc">3000㎡标准厂房，配备先进缝纫设备，车间恒温恒湿。</p>
+        </a>
+        <a href="factory-quality.html" class="fac-feature-link">
+          <div class="icon">✅</div>
+          <h4 data-i18n="fac2_title">专业质检体系</h4>
+          <p data-i18n="fac2_desc">AQL2.5国际验货标准，4阶段质量管控，专业质检团队。</p>
+        </a>
+        <a href="factory-sampling.html" class="fac-feature-link">
+          <div class="icon">✂️</div>
+          <h4 data-i18n="fac3_title">快速打样</h4>
+          <p data-i18n="fac3_desc">专业版房团队，收到设计稿后7-10天完成打样。支持来图来样定制。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="fac-section" style="background:linear-gradient(135deg, var(--cream), var(--rose-light));">
+    <div class="fac-container cta-block">
+      <h2 data-i18n="pr_cta_title">准备下单生产？</h2>
+      <p style="max-width: 500px; margin: 0 auto 30px;" data-i18n="pr_cta_desc">
+        无论订单大小，YISMAN都能为您提供稳定、高效的生产服务。获取报价，开始合作。
+      </p>
+      <a href="contact.html" class="btn btn-primary" data-i18n="pr_cta_btn">获取报价 →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">Y</div><div>YISMAN <span>依诗曼服装</span></div></a>
+        <p data-i18n="f_brand_desc">专业女士内衣制造商，15年行业经验，为全球品牌提供OEM/ODM一站式服务。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_quick">快速链接</h4>
+        <a href="index.html" data-i18n="nav_home">首页</a>
+        <a href="products.html" data-i18n="nav_products">产品中心</a>
+        <a href="factory.html" data-i18n="nav_factory">工厂实力</a>
+        <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_products_title">产品系列</h4>
+        <a href="products.html" data-i18n="f_pro1">无钢圈文胸</a>
+        <a href="products.html" data-i18n="f_pro2">蕾丝系列</a>
+        <a href="products.html" data-i18n="f_pro3">运动文胸</a>
+        <a href="products.html" data-i18n="f_pro4">女士内裤</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_contact_title">联系方式</h4>
+        <a>📍 <span data-i18n="con_addr">辽宁省大连市金州区</span></a>
+        <a>📞 <span data-i18n="con_phone">+86 18041167816</span></a>
+        <a>✉️ <span data-i18n="con_email">185436114@qq.com</span></a>
+        <a>💬 WhatsApp: +86 18041167816</a>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="f_copy">© 2026 大连依诗曼服装有限公司 版权所有</div>
+  </footer>
+
+  <button class="back-to-top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
