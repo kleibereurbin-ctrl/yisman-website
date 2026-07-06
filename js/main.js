@@ -311,17 +311,22 @@ document.addEventListener('DOMContentLoaded', () => {
           statNumbers.forEach(el => {
             const text = el.textContent;
             if (text.includes('+')) {
-              const target = parseInt(text.replace(/[^0-9]/g, ''));
-              let current = 0;
-              const step = Math.ceil(target / 60);
-              const interval = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                  current = target;
-                  clearInterval(interval);
-                }
-                el.textContent = current + '+';
-              }, 25);
+              // 提取数字和中文单位（如 500万+ → target=500, unit='万'）
+              const match = text.match(/^(\d+)([^\d+]*)\+$/);
+              if (match) {
+                const target = parseInt(match[1]);
+                const unit = match[2] || '';
+                let current = 0;
+                const step = Math.ceil(target / 60);
+                const interval = setInterval(() => {
+                  current += step;
+                  if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                  }
+                  el.textContent = current + unit + '+';
+                }, 25);
+              }
             }
           });
           observer.disconnect();
