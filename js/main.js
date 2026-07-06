@@ -23,7 +23,7 @@ const langData = {
     // Stats
     stat1: '15+', stat1_label: '年行业经验',
     stat2: '200+', stat2_label: '员工人数',
-    stat3: '500万+', stat3_label: '年产量(件)',
+    stat3: '5000000+', stat3_label: '年产量(件)',
     stat4: '30+', stat4_label: '出口国家',
 
     // About
@@ -863,7 +863,7 @@ const langData = {
     // Stats
     stat1: '15+', stat1_label: '年の経験',
     stat2: '200+', stat2_label: '従業員数',
-    stat3: '500万+', stat3_label: '年間生産量（着）',
+    stat3: '5000000+', stat3_label: '年間生産量（着）',
     stat4: '30+', stat4_label: '輸出先国数',
 
     // About
