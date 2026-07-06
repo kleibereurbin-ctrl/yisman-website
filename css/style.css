@@ -58,6 +58,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: transparent; color: var(--text-light);
   transition: var(--transition);
 }
+.lang-toggle .lang-btn { display: inline-block !important; }
 .lang-btn.active { background: var(--navy); color: var(--white); }
 .lang-btn:hover:not(.active) { background: var(--cream); }
 
@@ -353,6 +354,9 @@ html[lang="zh"] [data-lang="zh"] { display: block; }
 html[lang="zh"] [data-lang="en"] { display: none; }
 html[lang="en"] [data-lang="zh"] { display: none; }
 html[lang="en"] [data-lang="en"] { display: block; }
+html[lang="ja"] [data-lang="zh"] { display: none; }
+html[lang="ja"] [data-lang="en"] { display: none; }
+html[lang="ja"] [data-lang="ja"] { display: block; }
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
