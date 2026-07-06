@@ -446,7 +446,7 @@ const langData = {
 
     stat1: '15+', stat1_label: 'Years Experience',
     stat2: '200+', stat2_label: 'Skilled Workers',
-    stat3: '5M+', stat3_label: 'Annual Output',
+    stat3: '5000000+', stat3_label: 'Annual Output',
     stat4: '30+', stat4_label: 'Export Countries',
 
     about_title: 'About YISMAN',
